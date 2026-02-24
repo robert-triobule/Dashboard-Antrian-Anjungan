@@ -1,0 +1,115 @@
+/* Kontainer tabel: aktif scroll hanya jika baris > 7 */
+.table-container {
+    width: 100%;
+}
+
+.table-container.scrollable {
+    height: calc(100vh - 220px);
+    /* sesuaikan tinggi layar */
+    overflow-y: hidden;
+    /* sembunyikan scrollbar manual */
+    padding-right: 10px;
+}
+
+/* Card style (opsional, jika ingin tampilan per pasien) */
+.operasi-card {
+    background: linear-gradient(135deg, rgba(0, 128, 255, 0.2), rgba(0, 255, 200, 0.2));
+    border: 1px solid rgba(0, 128, 255, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.operasi-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.operasi-card h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #4fc3f7;
+    font-weight: bold;
+}
+
+.operasi-card .kelas {
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #81d4fa;
+}
+
+/* List style (opsional) */
+.jadwal-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.jadwal-list li {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+/* Status badge */
+.status {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.status.menunggu {
+    background: #4caf50;
+    /* hijau */
+    color: #fff;
+}
+
+.status.proses-operasi {
+    background: #ff9800;
+    /* oranye */
+    color: #fff;
+}
+
+/* Tabel style (utama untuk dashboard operasi) */
+.operasi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.operasi-table th,
+.operasi-table td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+}
+
+.operasi-table th {
+    background: rgba(0, 128, 255, 0.3);
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.operasi-table tr:hover {
+    background: rgba(0, 128, 255, 0.15);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    /* 1–2 kolom */
+    gap: 20px;
+    max-height: 620px;
+    /* cukup untuk 2 baris card */
+    overflow-y: auto;
+    /* scroll aktif jika lebih dari 2 baris */
+    padding: 10px;
+}

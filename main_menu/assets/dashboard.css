@@ -1,0 +1,155 @@
+.menu-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Kolom besar */
+.menu-column {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.menu-column h3 {
+    text-align: center;
+    color: #4fc3f7;
+    margin-bottom: 15px;
+}
+
+/* Grid isi Dashboard: 3x2 kotak */
+.menu-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.menu-cards a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(0, 128, 255, 0.3);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.menu-cards a:hover {
+    background: rgba(0, 128, 255, 0.6);
+}
+
+.menu-cards img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 6px;
+}
+
+.menu-cards span {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Tombol bawah: API GET LAST + PANGGIL ULANG FARMASI + PANGGIL ULANG POLI */
+.menu-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* tiga kolom sama besar */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Style umum untuk semua tombol */
+.menu-actions a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 13px;
+    /* kecilkan font */
+    text-align: center;
+    /* rata tengah */
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+/* Tombol kiri: API GET LAST */
+.action-left a {
+    background: #4caf50;
+    /* hijau */
+}
+
+.action-left a:hover {
+    background: #388e3c;
+}
+
+/* Tombol tengah: PANGGIL ULANG FARMASI */
+.action-middle a {
+    background: #2196f3;
+    /* biru */
+}
+
+.action-middle a:hover {
+    background: #1976d2;
+}
+
+/* Tombol kanan: PANGGIL ULANG POLI */
+.action-right a {
+    background: #ff5722;
+    /* oranye/pink */
+}
+
+.action-right a:hover {
+    background: #e64a19;
+}
+
+/* Grid khusus API GET LAST */
+.api-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.api-column {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.api-column h3 {
+    margin: 0;
+    padding: 8px;
+    background: #2196f3;
+    color: #fff;
+    font-size: 16px;
+}
+
+.api-cards {
+    padding: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    min-height: 120px;
+}
+
+@media (max-width: 1024px) {
+    .api-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .api-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,83 @@
+/* Grid utama: selalu 5 kotak per baris */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* paksa 5 kolom */
+    gap: 20px;
+}
+
+/* Scroll aktif hanya jika class scrollable ada (card > 5) */
+.grid.scrollable {
+    height: calc(100vh - 220px);
+    /* sesuaikan tinggi layar */
+    overflow-y: hidden;
+    /* sembunyikan scrollbar manual */
+    padding-right: 10px;
+}
+
+/* Card styling */
+.card {
+    background: rgba(0, 128, 255, 0.15);
+    border: 1px solid rgba(0, 128, 255, 0.4);
+    border-radius: 8px;
+    padding: 15px;
+    transition: background 0.3s ease;
+}
+
+.card:hover {
+    background: rgba(0, 128, 255, 0.25);
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #4fc3f7;
+    font-weight: bold;
+}
+
+.kelas {
+    text-align: center;
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #81d4fa;
+}
+
+.jadwal-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.jadwal-list li {
+    margin: 4px 0;
+    font-size: 15px;
+    color: #fff;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    /* susun vertikal: foto di atas, teks di bawah */
+    align-items: center;
+    /* rata tengah */
+}
+
+.foto-dokter img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    /* jarak ke teks di bawah */
+    padding: 4px;
+    border: 2px solid #4fc3f7;
+    /* opsional: bingkai */
+}
+
+.info-dokter {
+    text-align: center;
+    /* teks rata tengah */
+    width: 100%;
+}

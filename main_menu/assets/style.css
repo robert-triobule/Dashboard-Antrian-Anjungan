@@ -1,0 +1,185 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.instansi h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.instansi p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#clock {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Dashboard layout */
+.dashboard {
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.kelas {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.info {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.info td {
+    padding: 2px 6px;
+}
+
+.info td:first-child {
+    text-align: left;
+    font-weight: 500;
+    width: 100px;
+}
+
+.info td:last-child {
+    text-align: left;
+}
+
+/* Banner */
+.banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.scroll-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll-left 40s linear infinite;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Waktu sholat */
+#next-prayer {
+    position: absolute;
+    right: 30px;
+    top: calc(50% + 28px);
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: #4caf50;
+    /* hijau */
+    white-space: nowrap;
+}
+
+/* Responsive grid untuk semua dashboard/antrian */
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Tambahan untuk layar besar (TV 32 inci ke atas) */
+@media (min-width: 1600px) {
+    body {
+        font-size: 18px;
+        /* font lebih besar agar proporsional */
+    }
+
+    .card h3 {
+        font-size: 24px;
+    }
+
+    .kelas {
+        font-size: 20px;
+    }
+
+    .box span {
+        font-size: 1.6em;
+    }
+}

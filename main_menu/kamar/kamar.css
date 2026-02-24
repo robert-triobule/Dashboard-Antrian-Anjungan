@@ -1,0 +1,99 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    /* selalu 5 kotak per baris */
+    gap: 20px;
+}
+
+.grid.scrollable {
+    height: calc(100vh - 220px);
+    overflow-y: hidden;
+    padding-right: 10px;
+}
+
+/* Card modern transparan */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    /* tipis transparan */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 15px;
+    backdrop-filter: blur(6px);
+    /* efek kaca modern */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Kotak judul elegan */
+.header-box {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    /* gradasi ungu-biru */
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-box h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.header-box .kelas {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* Kotak info modern */
+.info-box {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.box {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.box:hover {
+    transform: translateY(-3px);
+}
+
+.total {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    /* biru gradasi */
+}
+
+.terisi {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    /* merah gradasi */
+}
+
+.kosong {
+    background: linear-gradient(135deg, #11998e, #38ef7d);
+    /* hijau gradasi */
+}
+
+.box span {
+    display: block;
+    font-size: 1.4em;
+    margin-top: 6px;
+}
