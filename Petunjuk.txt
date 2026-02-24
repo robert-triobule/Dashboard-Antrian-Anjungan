@@ -1,5 +1,5 @@
 Petunjuk :
-Ekstrak dulu Antrian-Dashboard.zip dan letakkan di Server pada folder SIMRS Khanza berada (posisi sejajar dengan webapps dll)
+Letakkan di Server pada folder SIMRS Khanza berada (posisi sejajar dengan webapps dll)
 
 1. edit conf.php, isi yang sesuai dengan pengaturan conf.php yang ada di server masing-masing
 
