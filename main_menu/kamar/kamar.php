@@ -43,7 +43,7 @@ $count = mysqli_num_rows($result);
   </header>
 
   <main class="dashboard">
-    <h2>DASHBOARD KETERSEDIAAN KAMAR INAP</h2>
+    <h2>DASHBOARD KAMAR INAP</h2>
 
     <div class="grid <?= ($count >= 10 ? 'scrollable' : '') ?>">
       <?php while($row = mysqli_fetch_assoc($result)): ?>

@@ -44,6 +44,12 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
           Jika Anda <strong>pasien baru</strong> dan belum memiliki No. RM, 
           silakan menuju ke Loket <strong>Pendaftaran / ADMISI</strong>.
         </p>
+
+        <!-- Tambahan menu cetak antrian loket untuk pasien baru -->
+        <p class="ambil-antrian">
+          👉 Untuk <strong>pasien baru</strong> yang belum memiliki No. RM, silakan :  
+          <button onclick="ambilAntrianLoket()" class="btn-ambil">AMBIL ANTRIAN LOKET</button>
+        </p>
       </div>
 
       <!-- Kolom kanan: input -->
@@ -83,6 +89,18 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
         <div style="text-align:center; margin-top:20px;">
           <button onclick="editForm()">⬅ Kembali</button>
           <button onclick="cetakDraft()">💾 Simpan & Cetak</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section khusus Ambil Antrian Loket -->
+    <section id="antrianLoket" class="hidden">
+      <div class="box-modern">
+        <h3 class="anjungan-title">NOMOR ANTRIAN LOKET</h3>
+        <div id="nomorLoket" class="nomor-box"></div>
+        <div class="action-buttons">
+          <a id="btnCetakLoket" href="#" class="btn-ambil" target="_blank">CETAK >>></a>
+          <button class="btn-back" onclick="kembaliKeForm()">⬅ Kembali ke Menu Awal</button>
         </div>
       </div>
     </section>

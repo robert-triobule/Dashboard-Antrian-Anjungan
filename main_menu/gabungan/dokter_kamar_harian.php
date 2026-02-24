@@ -118,7 +118,7 @@ $count_kamar = mysqli_num_rows($res_kamar);
 
     <!-- Panel Ketersediaan Kamar -->
     <div class="panel">
-      <h2>KETERSEDIAAN KAMAR</h2>
+      <h2>KAMAR INAP</h2>
       <div class="tbody-container <?= ($count_kamar > 7 ? 'scrollable' : '') ?>">
         <table class="data-table">
           <thead>

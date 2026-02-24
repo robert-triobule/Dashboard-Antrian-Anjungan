@@ -242,46 +242,152 @@
     font-weight: bold;
 }
 
+.ambil-antrian {
+    margin-top: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
+.btn-ambil {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #28a745;
+    /* hijau */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+}
+
+.btn-ambil:hover {
+    background: #218838;
+}
+
+/* Kotak modern untuk nomor antrian */
+.box-modern {
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.nomor-box {
+    font-size: 120px;
+    font-weight: bold;
+    color: #007bff;
+    border: 3px solid #007bff;
+    border-radius: 10px;
+    padding: 20px 40px;
+    margin: 20px auto;
+    display: inline-block;
+}
+
+.action-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
 /* =========================
    STYLE CETAK BUKTI (thermal)
    ========================= */
 @page {
+    margin: 0;
     size: 80mm auto;
-    margin: 5mm;
 }
 
-body {
-    font-family: Arial, sans-serif;
+.cetak-body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    width: 74mm;
+    /* margin sedikit agar tidak terpotong printer */
+    margin: 4mm auto;
     font-size: 12px;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
 }
 
-.kop {
-    display: flex;
-    align-items: center;
+.cetak-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.cetak-header h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.cetak-header p {
+    margin: 2px 0;
+    font-size: 10px;
+}
+
+.cetak-divider {
+    border-bottom: 1px dashed #000;
+    margin: 8px 0;
+}
+
+.cetak-title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 12px 0;
+    padding: 6px;
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.cetak-content {
+    margin: 8px 0;
+}
+
+.cetak-content table {
+    width: 100%;
+    border-collapse: collapse;
     margin-bottom: 10px;
 }
 
-.kop img {
-    height: 30px;
-    margin-right: 10px;
-}
-
-.kop .instansi {
-    font-weight: bold;
+.cetak-content td {
+    vertical-align: top;
+    padding: 3px 0;
     font-size: 12px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
+.cetak-label {
+    width: 30%;
 }
 
-td {
-    padding: 2px 0;
-    vertical-align: top;
+.cetak-colon {
+    width: 5%;
+    text-align: center;
 }
 
-.center {
+.cetak-val {
+    width: 65%;
+    font-weight: bold;
+}
+
+.cetak-footer {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+
+.nomor-antrian {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 10px 0;
+    line-height: 1;
     text-align: center;
 }
 
@@ -293,7 +399,7 @@ td {
         display: none;
     }
 
-    body {
+    .cetak-body {
         background: #fff;
         color: #000;
     }
@@ -301,4 +407,10 @@ td {
     .box {
         border: none;
     }
+
+    .nomor-antrian {
+        font-size: 70px;
+        font-weight: bold;
+    }
+
 }

@@ -46,13 +46,16 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
         <h3>Radiologi</h3>
         <pre id="radiologi"></pre>
       </div>
+      <div class="menu-column">
+        <h3>Loket</h3>
+        <pre id="loket"></pre>
+      </div>
     </div>
   </main>
 
   <?php include '../assets/banner.php'; ?>
 
   <script src="../assets/clock.js"></script>
-    
   <script>
   async function loadPanel(id, url) {
     try {
@@ -68,8 +71,9 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
   function refreshAll() {
     loadPanel("poli", "get_last.php");
     loadPanel("farmasi", "get_last_farmasi.php");
-    loadPanel("labgabung", "get_last_lab.php");   // ✅ hanya satu endpoint gabungan
+    loadPanel("labgabung", "get_last_lab.php");   // ✅ endpoint gabungan
     loadPanel("radiologi", "get_last_rad.php");
+    loadPanel("loket", "get_last_loket.php"); // ✅ tambahan untuk loket
   }
 
   setInterval(refreshAll, 5000);

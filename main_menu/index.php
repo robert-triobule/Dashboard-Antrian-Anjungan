@@ -36,7 +36,7 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
         <div class="menu-cards">
           <a href="kamar/kamar.php" target="_blank">
             <img src="assets/img/kamar.png" alt="Kamar">
-            <span>Ketersediaan Kamar</span>
+            <span>Kamar Inap</span>
           </a>
           <a href="operasi/operasi.php" target="_blank">
             <img src="assets/img/operasi.png" alt="Operasi">
@@ -85,14 +85,18 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
             <img src="assets/img/anjungan.png" alt="Anjungan">
             <span>Anjungan Mandiri</span>
           </a>
+          <a href="antrian/antrian_loket.php" target="_blank">
+            <img src="assets/img/loket.png" alt="Antrian Loket">
+            <span>Loket Admisi</span>
+          </a>
         </div>
 
-        <!-- Tambahan tombol bawah -->
+        <!-- Tombol bawah utama -->
         <div class="menu-actions">
-          <!-- Tombol kiri: API GET LAST -->
+          <!-- Tombol kiri: PANGGIL ANTRI LOKET -->
           <div class="action-left">
-            <a href="antrian/api_get_last_all.php" target="_blank">
-              API GET LAST
+            <a href="antrian/antrian_loket_panggil.php" target="_blank">
+              PANGGIL ANTRI LOKET
             </a>
           </div>
 
@@ -110,6 +114,14 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
             </a>
           </div>
         </div>
+
+        <!-- Tambahan baris khusus API GET LAST -->
+        <div class="menu-actions-full">
+          <a href="antrian/api_get_last_all.php" target="_blank">
+            API GET LAST
+          </a>
+        </div>
+
       </div>
 
       <!-- Kolom SIMRS -->

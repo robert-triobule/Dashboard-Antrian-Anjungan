@@ -4,6 +4,9 @@ Ekstrak dulu Antrian-Dashboard.zip dan letakkan di Server pada folder SIMRS Khan
 1. edit conf.php, isi yang sesuai dengan pengaturan conf.php yang ada di server masing-masing
 
 2. buka DB tabel antriapotek2, antriapotek3, antripoli dan ubah di kolom status menjadi '0','1','2','3'
+   buka DB tabel antriloketcetak dan tambahkan ini :
+ALTER TABLE antriloketcetak 
+ADD COLUMN status ENUM('menunggu','dipanggil','selesai') DEFAULT 'menunggu';
 
 3. untuk mengatur jadwal Waktu sholat di kota wilayah masing-masing, buka file clock.js
 cari :

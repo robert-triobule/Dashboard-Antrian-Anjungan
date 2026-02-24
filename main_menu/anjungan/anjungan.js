@@ -152,7 +152,7 @@ async function loadPenjab(kd_dokter, kd_poli) {
 // Step 4: Draft registrasi
 async function daftar(kd_dokter, kd_poli, kd_pj, nm_pj) {
     const no_rkm = sessionStorage.getItem("no_rkm_medis");
-    
+
     if (!no_rkm || !kd_pj) {
         alert("Data pasien atau jenis bayar tidak valid.");
         return;
@@ -227,10 +227,48 @@ async function simpanRegistrasi() {
     window.location.href = `cetak_bukti.php?no_rawat=${reg.no_rawat}`;
 }
 
+// Step khusus: Ambil Antrian Loket
+async function ambilAntrianLoket() {
+    try {
+        const res = await fetch("../antrian/get_last_loket.php");
+        const data = await res.json();
+
+        if (data.status !== "ok") {
+            alert(data.message || "Belum ada antrian");
+            return;
+        }
+
+        // isi nomor antrian
+        document.getElementById("nomorLoket").innerText = data.nomor;
+
+        // set link cetak
+        document.getElementById("btnCetakLoket").href =
+            `cetak_antrian_loket.php?nomor=${encodeURIComponent(data.nomor)}&tanggal=${encodeURIComponent(data.tanggal || '')}&jam=${encodeURIComponent(data.jam || '')}`;
+
+        // tampilkan section antrian
+        document.getElementById("formPasien").classList.add("hidden");
+        document.getElementById("anjunganTitle").classList.add("hidden");
+        document.getElementById("antrianLoket").classList.remove("hidden");
+    } catch (e) {
+        alert("Error ambil antrian: " + e.message);
+    }
+}
+
 function kembaliKeForm() {
+    // sembunyikan semua section antrian
+    document.getElementById('antrianLoket').classList.add("hidden");
     document.getElementById('pasienPoli').classList.add("hidden");
+
+    // tampilkan kembali form pasien / menu awal
     document.getElementById('formPasien').classList.remove("hidden");
     document.getElementById('anjunganTitle').classList.remove("hidden");
+
+    // reset input identitas
     document.getElementById('identitas').value = "";
+
+    // kosongkan nomor antrian agar tidak tersisa di layar
+    document.getElementById('nomorLoket').innerText = "";
+
+    // bersihkan sessionStorage
     sessionStorage.clear();
 }

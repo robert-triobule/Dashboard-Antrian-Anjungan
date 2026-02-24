@@ -1,8 +1,8 @@
 .menu-grid {
     display: flex;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 /* Kolom besar */
@@ -10,7 +10,7 @@
     flex: 1;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
-    padding: 20px;
+    padding: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
 }
 
@@ -32,7 +32,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 15px;
+    padding: 10px;
     background: rgba(0, 128, 255, 0.3);
     color: #fff;
     text-decoration: none;
@@ -56,7 +56,7 @@
     text-align: center;
 }
 
-/* Tombol bawah: API GET LAST + PANGGIL ULANG FARMASI + PANGGIL ULANG POLI */
+/* Tombol bawah: PANGGIL ANTRI LOKET + PANGGIL ULANG FARMASI + PANGGIL ULANG POLI */
 .menu-actions {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -70,8 +70,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    font-size: 13px;
+    height: 42px;
+    font-size: 12px;
     /* kecilkan font */
     text-align: center;
     /* rata tengah */
@@ -83,7 +83,7 @@
     transition: background 0.3s;
 }
 
-/* Tombol kiri: API GET LAST */
+/* Tombol kiri: PANGGIL ANTRI LOKET */
 .action-left a {
     background: #4caf50;
     /* hijau */
@@ -111,6 +111,30 @@
 
 .action-right a:hover {
     background: #e64a19;
+}
+
+/* Tombol khusus API GET LAST full width */
+.menu-actions-full {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.menu-actions-full a {
+    display: inline-block;
+    padding: 12px 40px;
+    background: #4caf50;
+    /* hijau */
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s;
+    font-size: 14px;
+}
+
+.menu-actions-full a:hover {
+    background: #388e3c;
 }
 
 /* Grid khusus API GET LAST */
