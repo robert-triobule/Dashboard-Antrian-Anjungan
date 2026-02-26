@@ -16,6 +16,13 @@ async function cariPasien() {
         return alert("Format tanggal lahir harus dd/mm/yyyy");
     }
 
+    // Fungsi bantu untuk format tanggal dari yyyy-mm-dd -> dd-mm-yyyy
+    function formatTanggal(isoDate) {
+        if (!isoDate) return "-";
+        const [yyyy, mm, dd] = isoDate.split("-");
+        return `${dd}-${mm}-${yyyy}`;
+    }
+
     try {
         // Kirim langsung ke API, biarkan server yang konversi
         const res = await fetch(
@@ -48,7 +55,8 @@ async function cariPasien() {
                 <tr><td class="label">No. KTP</td><td class="colon">:</td><td>${data.no_ktp || "-"}</td></tr>
                 <tr><td class="label">Jenis Kelamin</td><td class="colon">:</td><td>${data.jk || "-"}</td></tr>
                 <tr><td class="label">Tempat/Tgl Lahir</td><td class="colon">:</td>
-                    <td>${data.tmp_lahir || "-"}, ${data.tgl_lahir || "-"} Umur: ${data.umur || "-"}</td></tr>
+                    <td>${data.tmp_lahir || "-"}, ${formatTanggal(data.tgl_lahir)}<br>
+                    Umur : ${data.umur || "-"}</td></tr>
                 <tr>
                   <td class="label">Alamat</td>
                   <td class="colon">:</td>
