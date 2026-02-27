@@ -51,29 +51,6 @@ $count_kamar = mysqli_num_rows($res_kamar);
   <title>Dashboard Dokter Harian + Kamar</title>
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="dokter_kamar.css">
-  <style>
-    /* Header tabel sticky */
-    .table-container table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .table-container thead th {
-      position: sticky;
-      top: 0;
-      background: #222;
-      color: #fff;
-      z-index: 2;
-    }
-    .tbody-container {
-      max-height: 400px; /* sesuaikan tinggi */
-      overflow-y: auto;
-    }
-    /* Warna merah untuk jumlah kosong */
-    .data-table td.kosong {
-      color: red;
-      font-weight: bold;
-    }
-  </style>
 </head>
 <body>
   <header class="header">

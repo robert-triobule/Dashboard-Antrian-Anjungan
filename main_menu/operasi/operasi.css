@@ -11,12 +11,14 @@
     padding-right: 10px;
 }
 
-/* Card style (opsional, jika ingin tampilan per pasien) */
+/* Card style */
 .operasi-card {
-    background: linear-gradient(135deg, rgba(0, 128, 255, 0.2), rgba(0, 255, 200, 0.2));
+    background: rgba(0, 128, 255, 0.1);
     border: 1px solid rgba(0, 128, 255, 0.4);
     border-radius: 12px;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    color: #fff;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -26,10 +28,11 @@
 }
 
 .operasi-card h3 {
-    text-align: center;
-    font-size: 22px;
-    margin-bottom: 5px;
+    margin: 0 0 10px;
+    font-size: 20px;
     color: #4fc3f7;
+    text-align: center;
+    /* nama pasien rata tengah */
     font-weight: bold;
 }
 
@@ -37,7 +40,7 @@
     text-align: center;
     font-size: 16px;
     font-style: italic;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     color: #81d4fa;
 }
 
@@ -54,8 +57,29 @@
     color: #fff;
 }
 
+/* Detail grid */
+.detail {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    /* label sejajar dengan nilai */
+    row-gap: 6px;
+    column-gap: 10px;
+}
+
+.detail div {
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+}
+
+.detail .label {
+    font-weight: bold;
+    color: #cce7ff;
+}
+
 /* Status badge */
 .status {
+    display: inline-block;
     padding: 2px 8px;
     border-radius: 6px;
     font-weight: bold;
@@ -102,14 +126,13 @@
     background: rgba(0, 128, 255, 0.15);
 }
 
+/* Grid container untuk card */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
     /* 1–2 kolom */
     gap: 20px;
-    max-height: 620px;
-    /* cukup untuk 2 baris card */
+    max-height: calc(100vh - 220px);
     overflow-y: auto;
-    /* scroll aktif jika lebih dari 2 baris */
     padding: 10px;
 }

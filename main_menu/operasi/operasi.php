@@ -31,59 +31,7 @@ $count = mysqli_num_rows($result);
   <meta charset="UTF-8">
   <title>Dashboard Jadwal Operasi</title>
   <link rel="stylesheet" href="../assets/style.css">
-  <style>
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* 1–2 kolom */
-      gap: 20px;
-      max-height: calc(100vh - 220px);
-      overflow-y: auto;
-      padding: 10px;
-    }
-    .operasi-card {
-      background: rgba(0,128,255,0.1);
-      border: 1px solid rgba(0,128,255,0.4);
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-      padding: 15px;
-      color: #fff;
-    }
-    .operasi-card h3 {
-      margin: 0 0 10px;
-      font-size: 20px;
-      color: #4fc3f7;
-      text-align: center; /* nama pasien rata tengah */
-    }
-    .operasi-card .kelas {
-      text-align: center;
-      font-style: italic;
-      margin-bottom: 12px;
-      color: #81d4fa;
-    }
-    .detail {
-      display: grid;
-      grid-template-columns: 120px 1fr; /* label sejajar dengan nilai */
-      row-gap: 6px;
-      column-gap: 10px;
-    }
-    .detail div {
-      padding: 6px 0;
-      border-bottom: 1px dashed rgba(255,255,255,0.3);
-      font-size: 14px;
-    }
-    .detail .label {
-      font-weight: bold;
-      color: #cce7ff;
-    }
-    .status {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-    .status.menunggu { background:#4caf50; color:#fff; }
-    .status.proses-operasi { background:#ff9800; color:#fff; }
-  </style>
+  <link rel="stylesheet" href="operasi.css">
 </head>
 <body>
   <header class="header">
@@ -106,7 +54,8 @@ $count = mysqli_num_rows($result);
           <div class="kelas">No. Rawat: <?= $row['no_rawat'] ?></div>
           <div class="detail">
             <div class="label">Umur</div><div><?= hitungUmur($row['tgl_lahir']) ?> </div>
-            <div class="label">Tanggal</div><div><?= $row['tanggal'] ?></div>
+            <div class="label">Tanggal</div>
+            <div><?= date("d/m/Y", strtotime($row['tanggal'])) ?></div>
             <div class="label">Mulai</div><div><?= $row['jam_mulai'] ?> - Selesai: <?= $row['jam_selesai'] ?></div>
             <div class="label">Operasi</div><div><?= $row['nm_perawatan'] ?></div>
             <div class="label">Operator</div><div><?= $row['nm_dokter'] ?></div>
