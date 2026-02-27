@@ -56,7 +56,7 @@ $count = mysqli_num_rows($result);
             <div class="label">Umur</div><div><?= hitungUmur($row['tgl_lahir']) ?> </div>
             <div class="label">Tanggal</div>
             <div><?= date("d/m/Y", strtotime($row['tanggal'])) ?></div>
-            <div class="label">Mulai</div><div><?= $row['jam_mulai'] ?> - Selesai: <?= $row['jam_selesai'] ?></div>
+            <div class="label">Jam</div><div><?= $row['jam_mulai'] ?> - <?= $row['jam_selesai'] ?></div>
             <div class="label">Operasi</div><div><?= $row['nm_perawatan'] ?></div>
             <div class="label">Operator</div><div><?= $row['nm_dokter'] ?></div>
             <div class="label">Ruang</div><div><?= $row['nm_ruang_ok'] ?></div>
