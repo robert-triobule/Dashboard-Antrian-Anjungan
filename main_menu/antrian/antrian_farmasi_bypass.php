@@ -28,7 +28,7 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
   </header>
 
   <main class="dashboard farmasi bypass">
-    <h2>DAFTAR RESEP HARI INI</h2>
+    <h2>DAFTAR PANGGIL ULANG RESEP HARI INI</h2>
     <div class="poli-grid">
       <div class="panel" id="farmasiGabungan"><em>Memuat data...</em></div>
     </div>

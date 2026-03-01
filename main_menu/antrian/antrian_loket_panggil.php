@@ -68,7 +68,7 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
     <div class="grid-container">
       <!-- Panel kiri: daftar antrian -->
       <div class="left-panel">
-        <h2>DAFTAR ANTRIAN LOKET HARI INI</h2>
+        <h2>DAFTAR PANGGIL ANTRIAN LOKET HARI INI</h2>
         <table class="antrian-loket">
           <thead>
             <tr>

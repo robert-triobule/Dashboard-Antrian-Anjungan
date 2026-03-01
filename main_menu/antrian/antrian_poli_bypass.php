@@ -29,7 +29,7 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
 
   <!-- Perhatikan: class dashboard bypass -->
   <main class="dashboard bypass">
-    <h2>DAFTAR PANGGIL ULANG PASIEN HARI INI</h2>
+    <h2>DAFTAR PANGGIL ULANG PASIEN POLI HARI INI</h2>
     <div class="poli-grid"><em>Memuat data pasien...</em></div>
   </main>
 
