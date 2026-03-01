@@ -126,7 +126,7 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
 
       <!-- Kolom SIMRS -->
       <div class="menu-column">
-        <h3>SIMRS</h3>
+        <h3>SIMRS KHANZA</h3>
         <div class="menu-cards">
           <a href="../edokter?nocache=<?= time() ?>" target="_blank" rel="noopener noreferrer">
             <img src="assets/img/edokter.png" alt="E Dokter">
@@ -147,6 +147,14 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten FROM se
              target="_blank" rel="noopener noreferrer">
              <img src="assets/img/webapps.png" alt="Webapps">
              <span>KONFIRMASI & PERSETUJUAN</span>
+          </a>
+          <?php
+          $baseFolder = basename(dirname(__DIR__)); // ambil nama folder induk
+          ?>
+          <a href="https://<?= $_SERVER['HTTP_HOST'] ?>/<?= $baseFolder ?>/webapps/presensi/?nocache=<?= time() ?>" 
+             target="_blank" rel="noopener noreferrer">
+             <img src="assets/img/presensi.png" alt="Presensi">
+             <span>PRESENSI</span>
           </a>
           <a href="../kyc-library-php?nocache=<?= time() ?>" target="_blank" rel="noopener noreferrer">
             <img src="assets/img/kyc.png" alt="KYC">
