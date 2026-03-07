@@ -176,3 +176,24 @@
         grid-template-columns: 1fr;
     }
 }
+
+.menu-button-wide {
+    grid-column: span 3;
+    /* Lebar 3 kolom */
+    margin-top: 12px;
+}
+
+.menu-button-wide a {
+    display: block;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.menu-button-wide a:hover {
+    background-color: #0056b3;
+}

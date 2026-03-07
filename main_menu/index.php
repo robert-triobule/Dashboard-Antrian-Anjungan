@@ -161,6 +161,14 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
             <img src="assets/img/kyc.png" alt="KYC">
             <span>KYC</span>
           </a>
+
+          <!-- Tambahan tombol lebar 3x1 -->
+          <div class="menu-button-wide">
+            <a href="pengajuan/daftar_pengajuan.php" target="_blank" rel="noopener noreferrer">
+              <span>PENGAJUAN HAPUS NOTA SALAH</span>
+            </a>
+          </div>
+
         </div>
       </div>
     </div>
