@@ -161,11 +161,11 @@ if(!$query){
                     <?php if($row['tindak_lanjut'] == '' || $row['tindak_lanjut'] == 'Menunggu verifikasi') { ?>
                       <form method="post" action="daftar_pengajuan.php" style="display:inline; margin-left:4px;">
                         <input type="hidden" name="id_pengajuan" value="<?= $row['id_pengajuan'] ?>">
-                        <button type="submit" name="status_tindak" value="Selesai">Selesai</button>
+                        <button type="submit" name="status_tindak" value="Selesai" class="btn-selesai">Selesai</button>
                       </form>
                       <form method="post" action="daftar_pengajuan.php" style="display:inline; margin-left:4px;">
                         <input type="hidden" name="id_pengajuan" value="<?= $row['id_pengajuan'] ?>">
-                        <button type="submit" name="status_tindak" value="Ditolak">Ditolak</button>
+                        <button type="submit" name="status_tindak" value="Ditolak" class="btn-ditolak">Ditolak</button>
                       </form>
                     <?php } else { ?>
                       <button disabled>Selesai</button>

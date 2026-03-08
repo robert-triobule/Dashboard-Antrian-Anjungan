@@ -271,8 +271,6 @@ body.pengajuan table.tabel-pengajuan td form button {
     border-radius: 4px;
     cursor: pointer;
     background-color: #AA00AA;
-    color: #fff;
-    /* default tombol tetap putih */
     transition: background-color 0.3s ease;
 }
 
