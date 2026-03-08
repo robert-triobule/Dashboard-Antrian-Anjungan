@@ -120,7 +120,7 @@
 }
 
 .menu-actions-full a {
-    display: inline-block;
+    display: block;
     padding: 12px 40px;
     background: #534caf;
     color: #fff;
@@ -188,7 +188,7 @@
     background-color: #007bff;
     color: #fff;
     text-align: center;
-    padding: 16px;
+    padding: 12px;
     font-weight: bold;
     text-decoration: none;
     border-radius: 6px;
