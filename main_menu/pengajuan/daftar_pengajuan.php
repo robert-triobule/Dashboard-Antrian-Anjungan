@@ -69,7 +69,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pengajuan'], $_POST
     $diproses_oleh = mysqli_real_escape_string($conn_pengajuan, $_SESSION['nama_pengaju']);
 
     $sql_update = "UPDATE pengajuan_nota_salah 
-                   SET tindak_lanjut='$status_tindak', diproses_oleh='$diproses_oleh' 
+                   SET tindak_lanjut='$status_tindak', 
+                       diproses_oleh='$diproses_oleh',
+                       jam_proses=NOW()
                    WHERE id_pengajuan=$id_pengajuan";
     if(mysqli_query($conn_pengajuan, $sql_update)){
         $_SESSION['success_pengajuan'] = "Tindak lanjut berhasil diubah menjadi $status_tindak oleh $diproses_oleh.";
@@ -84,7 +86,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pengajuan'], $_POST
 // Ambil daftar pengajuan
 $query = mysqli_query($conn_pengajuan, "SELECT id_pengajuan, no_reg, no_rawat, no_rkm_medis, nm_pasien,
                                                tgl_registrasi, status_lanjut, nm_dokter, nm_poli,
-                                               alasan, yang_mengajukan, tindak_lanjut, diproses_oleh, created_at
+                                               alasan, yang_mengajukan, tindak_lanjut, diproses_oleh, created_at, jam_proses
                                         FROM pengajuan_nota_salah
                                         ORDER BY created_at DESC");
 if(!$query){
@@ -142,6 +144,7 @@ if(!$query){
             <th>Tindak Lanjut</th>
             <th>Diproses Oleh</th>
             <th>Dibuat</th>
+            <th>Diproses</th>
           </tr>
         </thead>
         <tbody>
@@ -182,10 +185,11 @@ if(!$query){
                 </td>
                 <td><?= $row['diproses_oleh'] ?: '-' ?></td>
                 <td><?= $row['created_at'] ? date('d-m-Y H:i', strtotime($row['created_at'])) : '-' ?></td>
+                <td><?= $row['jam_proses'] ? date('d-m-Y H:i', strtotime($row['jam_proses'])) : '-' ?></td>
               </tr>
             <?php } ?>
           <?php } else { ?>
-            <tr><td colspan="14">Belum ada pengajuan</td></tr>
+            <tr><td colspan="15">Belum ada pengajuan</td></tr>
           <?php } ?>
         </tbody>
       </table>
