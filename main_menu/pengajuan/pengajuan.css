@@ -280,15 +280,15 @@ body.pengajuan table.tabel-pengajuan td form button:hover {
 
 /* Override khusus tombol SELESAI dan DITOLAK */
 body.pengajuan table.tabel-pengajuan td form button.btn-selesai {
-    background: none !important;
-    color: #007bff !important;
+    background: blue !important;
+    color: white !important;
     /* teks biru */
     font-weight: bold;
 }
 
 body.pengajuan table.tabel-pengajuan td form button.btn-ditolak {
-    background: none !important;
-    color: #dc3545 !important;
+    background: red !important;
+    color: white !important;
     /* teks merah */
     font-weight: bold;
 }
