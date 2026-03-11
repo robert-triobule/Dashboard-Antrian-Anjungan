@@ -197,3 +197,24 @@
 .menu-button-wide a:hover {
     background-color: #0056b3;
 }
+
+.menu-button-wide-1 {
+    grid-column: span 3;
+    /* Lebar 3 kolom */
+    margin-top: 12px;
+}
+
+.menu-button-wide-1 a {
+    display: block;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.menu-button-wide-1 a:hover {
+    background-color: rgb(238, 65, 65);
+}

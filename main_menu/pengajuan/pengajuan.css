@@ -301,3 +301,277 @@ body.pengajuan table.tabel-pengajuan td form button.btn-ditolak {
 .btn-ditolak:hover {
     text-decoration: underline;
 }
+
+/* === TABEL PENGATURAN RUANG === */
+body.pengajuan form.form-input {
+    display: flex;
+    gap: 10px;
+    margin: 20px auto;
+    justify-content: center;
+    max-width: 600px;
+}
+
+body.pengajuan form.form-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+body.pengajuan form.form-input button {
+    padding: 10px 16px;
+    background-color: #AA00AA;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+body.pengajuan form.form-input button:hover {
+    background-color: #880088;
+}
+
+/* === TABEL RUANG: RESPONSIVE & RAPI === */
+body.pengajuan .table-container-ruang {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 15px;
+    border: 2px solid #AA00AA;
+    /* kotak luar tabel */
+    border-radius: 6px;
+    padding: 8px;
+    background-color: rgba(170, 0, 170, 0.05);
+    /* bingkai tipis */
+}
+
+body.pengajuan table.tabel-ruang {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: transparent;
+}
+
+body.pengajuan table.tabel-ruang th,
+body.pengajuan table.tabel-ruang td {
+    border: 1px solid #ccc;
+    /* garis antar kolom */
+    padding: 8px 10px;
+    font-size: 14px;
+    text-align: left;
+    background-color: transparent !important;
+}
+
+body.pengajuan table.tabel-ruang th {
+    background-color: rgba(170, 0, 170, 0.2) !important;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+body.pengajuan table.tabel-ruang td:nth-child(2) {
+    white-space: normal;
+    /* biar nama ruang bisa turun baris */
+    word-break: break-word;
+}
+
+/* Kolom nomor urut lebih kecil */
+body.pengajuan table.tabel-ruang th:first-child,
+body.pengajuan table.tabel-ruang td:first-child {
+    width: 60px;
+    text-align: center;
+}
+
+/* Tombol aksi Hapus */
+body.pengajuan table.tabel-ruang td a {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: red;
+    color: #fff !important;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+body.pengajuan table.tabel-ruang td a:hover {
+    background-color: darkred;
+}
+
+.pagination {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 0 2px;
+    border: 1px solid #AA00AA;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #AA00AA;
+    font-weight: bold;
+}
+
+.pagination a.active {
+    background-color: #AA00AA;
+    color: #fff;
+}
+
+.pagination a:hover {
+    background-color: #880088;
+    color: #fff;
+}
+
+/* === NAVIGASI MENU JADI TOMBOL === */
+body.pengajuan .nav-menu {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+body.pengajuan .nav-menu a {
+    display: inline-block;
+    background-color: #AA00AA;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+body.pengajuan .nav-menu a:hover {
+    background-color: #880088;
+}
+
+/* === SCROLL KHUSUS TABEL DAFTAR === */
+body.pengajuan .table-container {
+    max-height: 400px;
+    /* batasi tinggi tabel */
+    overflow-y: auto;
+    /* scroll vertikal hanya di tabel */
+    overflow-x: auto;
+    /* scroll horizontal jika tabel melebar */
+    width: 100%;
+    margin-bottom: 20px;
+    /* beri jarak sebelum banner */
+}
+
+.btn-modern {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-modern:hover {
+    background: linear-gradient(135deg, #45a049, #3e8e41);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.btn-modern:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Input khusus Nama Kegiatan */
+body.pengajuan form.pengajuan-form input[name="nama_kegiatan"] {
+    background-color: #fff;
+    /* putih */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #222;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.pengajuan form.pengajuan-form input[name="nama_kegiatan"]:focus {
+    border-color: #AA00AA;
+    box-shadow: 0 0 5px rgba(170, 0, 170, 0.4);
+    outline: none;
+}
+
+.form-inline {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-inline label {
+    margin-right: 5px;
+}
+
+.form-inline select,
+.form-inline input {
+    padding: 5px;
+}
+
+.center-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* ini yang bikin card turun ke tengah vertikal */
+    min-height: 70vh;
+    /* supaya card tidak nempel ke header */
+}
+
+.ruang-room {
+    font-size: 48px;
+    /* lebih besar dari judul kegiatan */
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #800000;
+    /* misalnya merah tua biar beda */
+}
+
+.ruang-card {
+    border: 2px solid #004080;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 20px auto;
+    width: 70%;
+    /* lebih lebar */
+    background-color: #cce0ff;
+    /* lebih biru, tidak tampak putih */
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ruang-card input {
+    background-color: transparent !important;
+}
+
+.ruang-title {
+    font-size: 52px;
+    /* judul lebih besar */
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: #00264d;
+}
+
+.ruang-info {
+    font-size: 24px;
+    /* waktu lebih besar */
+    margin-top: 10px;
+    text-align: center;
+    color: #333;
+}

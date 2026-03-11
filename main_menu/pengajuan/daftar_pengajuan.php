@@ -16,6 +16,26 @@ $setting = fetch_assoc("SELECT nama_instansi, alamat_instansi, kabupaten, kontak
 $conn_pengajuan = bukakoneksi_pengajuan();
 $conn_main      = bukakoneksi(); // koneksi ke DB utama (reg_periksa)
 
+// ambil username login dari session
+$userLogin = $_SESSION['ses_pengajuan_login'];
+
+$canHapusNotaSalah = false;
+
+// cek apakah user ada di tabel admin
+$cekAdmin = mysqli_query($conn_main, "SELECT usere FROM admin WHERE usere='$userLogin' LIMIT 1");
+if($cekAdmin && mysqli_num_rows($cekAdmin) > 0){
+    $canHapusNotaSalah = true;
+}
+
+// cek apakah user ada di tabel user dengan flag hapus_nota_salah = true
+$cekUser = mysqli_query($conn_main, "SELECT hapus_nota_salah FROM user WHERE id_user='$userLogin' LIMIT 1");
+if($cekUser && mysqli_num_rows($cekUser) > 0){
+    $rowUser = mysqli_fetch_assoc($cekUser);
+    if(strtolower($rowUser['hapus_nota_salah']) === 'true'){
+        $canHapusNotaSalah = true;
+    }
+}
+
 // Jika ada data POST dari form_pengajuan
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['no_rawat'])) {
     $no_rawat      = mysqli_real_escape_string($conn_pengajuan, $_POST['no_rawat']);
@@ -58,7 +78,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['no_rawat'])) {
 
 // Jika ada update tindak lanjut
 if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_pengajuan'], $_POST['status_tindak'])) {
-    if(empty($_SESSION['hapus_nota_salah']) || $_SESSION['hapus_nota_salah'] != 1) {
+    if(!$canHapusNotaSalah) {
         $_SESSION['error_pengajuan'] = "Anda tidak memiliki hak akses untuk tindak lanjut.";
         header("Location: daftar_pengajuan.php");
         exit;
@@ -164,8 +184,8 @@ if(!$query){
                 <td><?= $row['yang_mengajukan'] ?></td>
                 <td>
                   <?= htmlspecialchars($row['tindak_lanjut']) ?>
-                  <?php if(!empty($_SESSION['hapus_nota_salah']) && $_SESSION['hapus_nota_salah'] == 1) { ?>
-                    <?php if($row['tindak_lanjut'] == '' || $row['tindak_lanjut'] == 'Menunggu verifikasi') { ?>
+                  <?php if($canHapusNotaSalah){ ?>
+                    <?php if($row['tindak_lanjut'] == '' || $row['tindak_lanjut'] == 'Menunggu verifikasi'){ ?>
                       <form method="post" action="daftar_pengajuan.php" style="display:inline; margin-left:4px;">
                         <input type="hidden" name="id_pengajuan" value="<?= $row['id_pengajuan'] ?>">
                         <button type="submit" name="status_tindak" value="Selesai" class="btn-selesai">Selesai</button>
@@ -197,8 +217,9 @@ if(!$query){
 
     <div class="button-group">
       <a href="form_pengajuan.php" class="btn-exit">Tambah Pengajuan</a>
-      <a href="logout.php" class="btn-exit">Logout</a>
+      <a href="menu_pengajuan.php" class="btn-exit">Kembali</a>
     </div>
+
   </main>
 
   <!-- Banner bawah -->
