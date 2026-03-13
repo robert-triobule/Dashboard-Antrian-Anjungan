@@ -42,7 +42,7 @@ $qTT = mysqli_query($conn_sik, "
     FROM kamar k
     JOIN bangsal b ON k.kd_bangsal = b.kd_bangsal
     WHERE k.statusdata='1'
-    ORDER BY k.kd_kamar ASC
+    ORDER BY b.nm_bangsal ASC
     LIMIT $start, $limit
 ");
 ?>
